@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Apps</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the footer sticks to the bottom */
+            overflow: hidden; /* Prevents scrolling */
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .home {
+            max-width: 600px; /* Adjust width as needed */
+        }
+
+        .home h2 {
+            font-size: 36px; /* Adjust font size as needed */
+            margin-bottom: 20px;
+        }
+
+        .home p {
+            font-size: 18px; /* Adjust font size as needed */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Animation for background */
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        body::before {
+            content: attr(data-text);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(90deg, #333, #f0f0f0, #333); /* Match existing colors */
+            background-size: 200% 100%;
+            animation: backgroundAnimation 10s linear infinite;
+            opacity: 0.3; /* Adjust opacity for visibility */
+            mix-blend-mode: overlay; /* Ensures text is visible */
+            color: #000; /* Text color */
+            font-size: 48px; /* Text size */
+            font-weight: bold; /* Text weight */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Prevent text overflow */
+            animation-direction: alternate; /* Text writing and erasing effect */
+            animation-duration: 10s; /* Total animation duration */
+        }
+    </style>
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>AppZone</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="Apps.html">Apps</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+                <li><a href="Latest.html">Latest</a></li>
+                <li><a href="Comingsoon.html">Coming Soon</a></li>
+                <li><a href="Topratings.html">Top Ratings</a></li>
+                <li><a href="Login.html">Login bro</a></li> 
+                    <form class="search-form" action="#">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><span class="iconify" data-icon="bi:search"></span></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Homepage content -->
+        <section class="home">
+            <h2>Welcome to AppZone</h2>
+            <p>Discover and download the latest apps for your device.</p>
+        </section>
+        <!-- Other pages content -->
+        <!-- You can link real web pages or add content here -->
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AppZone. All rights reserved.</p>
+    </footer>
+</body>
+</html>

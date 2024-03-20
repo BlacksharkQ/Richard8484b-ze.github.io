@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Apps</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+           
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .home {
+            max-width: 600px; /* Adjust width as needed */
+        }
+
+        .home h2 {
+            font-size: 36px; /* Adjust font size as needed */
+            margin-bottom: 20px;
+        }
+
+        .home p {
+            font-size: 18px; /* Adjust font size as needed */
+        }
+
+       
+
+        /* Animation for background */
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        body::before {
+            content: attr(data-text);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(90deg, #333, #f0f0f0, #333); /* Match existing colors */
+            background-size: 200% 100%;
+            animation: backgroundAnimation 10s linear infinite;
+            opacity: 0.3; /* Adjust opacity for visibility */
+            mix-blend-mode: overlay; /* Ensures text is visible */
+            color: #000; /* Text color */
+            font-size: 48px; /* Text size */
+            font-weight: bold; /* Text weight */
+            white-space: nowrap; /* Prevent text from wrapping */
+            overflow: hidden; /* Prevent text overflow */
+            animation-direction: alternate; /* Text writing and erasing effect */
+            animation-duration: 10s; /* Total animation duration */
+        }
+    </style>
+   
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>AppZone</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="AppsWebsite.html">Home</a></li>
+                <li><a href="Apps.html">Apps</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+                <li><a href="Latest.html">Latest</a></li>
+                <li><a href="Comingsoon.html">Coming Soon</a></li>
+                <li><a href="Topratings.html">Top Ratings</a></li>
+                <li><a href="Login.html">Login bro</a></li> 
+                    <form class="search-form" action="#">
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><span class="iconify" data-icon="bi:search"></span></button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Homepage content -->
+        <section class="home">
+            <h2>Welcome to AppZone</h2>
+            <p>Discover and download the latest apps for your device.</p>
+        </section>
+        <!-- Other pages content -->
+        <!-- You can link real web pages or add content here -->
+    </main>
+
+    
+</body>
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Form</title>
+    <style>
+        /* Add your CSS styles here */
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Interactive Form</h2>
+
+<form id="myForm" onsubmit="return validateForm()">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><span id="nameError" class="error"></span><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><span id="emailError" class="error"></span><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message"></textarea><br><br>
+
+    <label for="gender">Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+    </select><br><br>
+
+    <label for="file">Upload File:</label><br>
+    <input type="file" id="file" name="file"><br><br>
+
+    <input type="checkbox" id="agree" name="agree">
+    <label for="agree">I agree to the terms and conditions</label><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    // Function to validate the form
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+
+        if (name.trim() === "") {
+            document.getElementById("nameError").innerHTML = "Please enter your name";
+            return false;
+        } else {
+            document.getElementById("nameError").innerHTML = "";
+        }
+
+        if (email.trim() === "") {
+            document.getElementById("emailError").innerHTML = "Please enter your email";
+            return false;
+        } else {
+            document.getElementById("emailError").innerHTML = "";
+        }
+
+        if (name.length > 20) {
+            alert("Name cannot exceed 20 characters");
+            return false;
+        }
+
+        alert("Thank you for submitting your form. Name: " + name);
+        return true;
+    }
+
+    // Function to handle checkbox click event
+    document.getElementById("agree").addEventListener("click", function() {
+        var checkboxMsg = document.getElementById("checkboxMsg");
+        if (this.checked) {
+            checkboxMsg.innerHTML = "That is amazing.";
+        } else {
+            checkboxMsg.innerHTML = "";
+        }
+    });
+
+    // Function to concatenate and display parameters
+    function displayConcatenation(param1, param2) {
+        document.getElementById("concatenation").innerHTML = param1 + " " + param2;
+    }
+</script>
+
+</body>
+</html>
